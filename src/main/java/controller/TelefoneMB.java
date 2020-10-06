@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.enterprise.context.SessionScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 import model.Telefone;
@@ -19,6 +20,7 @@ public class TelefoneMB implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	
+	@Inject
 	private Telefone telefone;
 	
 	private List<Telefone> telefones = new ArrayList<>();
