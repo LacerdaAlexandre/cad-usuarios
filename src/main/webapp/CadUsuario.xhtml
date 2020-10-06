@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:h="http://xmlns.jcp.org/jsf/html"
+		xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Insert title here</title>
+</h:head>
+<h:body>
+	<h:form>
+		<h:panelGrid columns="2">
+			<h:outputText value="Nome"/> 
+			<h:inputText value="#{usuarioMB.usuario.nome}"/>
+			<h:outputText value="EMail"/> 
+			<h:inputText value="#{usuarioMB.usuario.email}"/>
+			<h:outputText value="Senha"/> 
+			<h:inputSecret value="#{usuarioMB.usuario.senha}"/>
+			<h:outputText value="Confirme a senha"/> <h:inputSecret/>
+			<h:outputText value="Cadastrar telefones"/>
+			<h:outputText/>
+			<h:outputText value="DDD"/> 
+			<h:inputText value="#{telefoneMB.telefone.oddd}"/>
+			<h:outputText value="Número"/> 
+			<h:inputText value="#{telefoneMB.telefone.oNúmero}"/>
+			<h:outputText value="Nome"/> 
+			<h:inputText value="#{telefoneMB.telefone.oTipo}"/>
+
+			<h:dataTable value="#{telefoneMB.telefones}" var="telefone">
+				<h:column>#{telefoneMB.telefone.oddd}</h:column>
+				<h:column>#{telefoneMB.telefone.oNúmero}</h:column>
+				<h:column>#{telefoneMB.telefone.oTipo}</h:column>
+			</h:dataTable>
+			
+			<div><h:commandButton value="adicionar"/></div>
+			<div><h:commandButton value="cadastrar usuário" action="#{usuarioMB.adicionar}"/></div>
+		</h:panelGrid>
+	</h:form>
+
+</h:body>
+</html>
