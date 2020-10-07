@@ -2,39 +2,48 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 		xmlns:h="http://xmlns.jcp.org/jsf/html"
-		xmlns:f="http://xmlns.jcp.org/jsf/core">
+		xmlns:f="http://xmlns.jcp.org/jsf/core"
+		xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+		xmlns:p="http://primefaces.org/ui">
 <h:head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Insert title here</title>
 </h:head>
 <h:body>
-	<h:form>
-		<h:panelGrid columns="2">
-			<h:outputText value="Nome"/> 
-			<h:inputText value="#{usuarioMB.usuario.nome}"/>
-			<h:outputText value="EMail"/> 
-			<h:inputText value="#{usuarioMB.usuario.email}"/>
-			<h:outputText value="Senha"/> 
-			<h:inputSecret value="#{usuarioMB.usuario.senha}"/>
-			<h:outputText value="Confirme a senha"/> <h:inputSecret/>
-			<h:outputText value="Cadastrar telefones"/>
-			<h:outputText/>
-			<h:outputText value="DDD"/> 
-			<h:inputText value="#{telefoneMB.telefone.oddd}"/>
-			<h:outputText value="Número"/> 
-			<h:inputText value="#{telefoneMB.telefone.oNúmero}"/>
-			<h:outputText value="Nome"/> 
-			<h:inputText value="#{telefoneMB.telefone.oTipo}"/>
-
-			<h:dataTable value="#{telefoneMB.telefones}" var="telefone">
-				<h:column>#{telefoneMB.telefone.oddd}</h:column>
-				<h:column>#{telefoneMB.telefone.oNúmero}</h:column>
-				<h:column>#{telefoneMB.telefone.oTipo}</h:column>
-			</h:dataTable>
+	<h:form id="FormCadastroUsuarios">
+		<p:panelGrid columns="2" id="gridCadastroUsuarios">
+			<p:outputLabel value="Nome"/> 
+			<p:inputText value="#{usuarioMB.usuario.nome}"/>
+			<p:outputLabel value="EMail"/> 
+			<p:inputText value="#{usuarioMB.usuario.email}"/>
 			
-			<div><h:commandButton value="adicionar"/></div>
-			<div><h:commandButton value="cadastrar usuário" action="#{usuarioMB.adicionar}"/></div>
-		</h:panelGrid>
+			
+	        <p:outputLabel for="pwd1" value="Password 1: *" />
+	        <p:password id="pwd1" value="#{passwordView.password5}" match="pwd2" label="Password 1" required="true" feedback="true"  />
+	 
+	        <p:outputLabel for="pwd2" value="Password 2: *" />
+	        <p:password id="pwd2" value="#{passwordView.password5}" label="Password 2" required="true" />
+
+			
+			<p:outputLabel value="Cadastrar telefones"/>
+			<p:outputLabel/>
+			<p:outputLabel value="DDD"/> 
+			<p:inputText value="#{telefoneMB.telefone.oddd}"/>
+			<p:outputLabel value="Número"/> 
+			<p:inputText value="#{telefoneMB.telefone.oNumero}"/>
+			<p:outputLabel value="Tipo"/> 
+			<p:inputText value="#{telefoneMB.telefone.oTipo}"/>
+
+			TELEFONES
+			<p:dataTable value="#{telefoneMB.telefones}" var="telefone" border="1" id="tableTelefones">
+				<p:column headerText="DDD">#{telefone.oddd}</p:column>
+				<p:column headerText="Número">#{telefone.oNumero}</p:column>
+				<p:column headerText="Tipo">#{telefone.oTipo}</p:column>
+			</p:dataTable>
+			
+			<p:commandButton value="adicionar" action="#{telefoneMB.adicionar}" update="tableTelefones"/>
+			<p:commandButton value="cadastrar usuário" action="#{usuarioMB.adicionar}" update="FormCadastroUsuarios gridCadastroUsuarios"/>
+		</p:panelGrid>
 	</h:form>
 
 </h:body>

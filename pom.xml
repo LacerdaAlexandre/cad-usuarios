@@ -33,7 +33,34 @@
 	  <scope>compile</scope>
 	</dependency>
 	
-	  
+	<dependency>
+		<groupId>org.primefaces</groupId>
+		<artifactId>primefaces</artifactId>
+		<version>8.0</version>
+	  	<scope>compile</scope>
+	</dependency>
+	
+	<dependency>
+	  <groupId>org.hibernate</groupId>
+	  <artifactId>hibernate-core</artifactId>
+	  <version>5.4.22.Final</version>
+	  <scope>compile</scope>
+	</dependency>		  
+	
+	<dependency>
+	  <groupId>org.hibernate</groupId>
+	  <artifactId>hibernate-entitymanager</artifactId>
+	  <version>5.4.22.Final</version>
+	  <scope>compile</scope>
+	</dependency>
+	
+	<dependency>
+	  <groupId>postgresql</groupId>
+	  <artifactId>postgresql</artifactId>
+	  <version>9.1-901-1.jdbc4</version>
+	  <scope>compile</scope>
+	</dependency>	
+	
   </dependencies>
 
 

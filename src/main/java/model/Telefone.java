@@ -12,7 +12,7 @@ public class Telefone implements Serializable{
 	private Integer id;
 	private Integer idUsuario;
 	private int oddd;
-	private String oNúmero;
+	private String oNumero;
 	private String oTipo;
 	public Integer getId() {
 		return id;
@@ -32,11 +32,11 @@ public class Telefone implements Serializable{
 	public void setOddd(int oddd) {
 		this.oddd = oddd;
 	}
-	public String getoNúmero() {
-		return oNúmero;
+	public String getoNumero() {
+		return oNumero;
 	}
-	public void setoNúmero(String oNúmero) {
-		this.oNúmero = oNúmero;
+	public void setoNumero(String oNúmero) {
+		this.oNumero = oNúmero;
 	}
 	public String getoTipo() {
 		return oTipo;
