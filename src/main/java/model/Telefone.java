@@ -2,22 +2,31 @@ package model;
 
 import java.io.Serializable;
 
-public class Telefone implements Serializable{
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Telefones")
+public class Telefone implements Serializable, DBase{
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private Integer id;
+	@Id
+	@GeneratedValue
+	private Long id;
 	private Integer idUsuario;
 	private int oddd;
 	private String oNumero;
 	private String oTipo;
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public Integer getIdUsuario() {

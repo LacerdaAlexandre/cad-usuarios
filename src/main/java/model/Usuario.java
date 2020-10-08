@@ -3,25 +3,34 @@ package model;
 import java.io.Serializable;
 import java.util.List;
 
-public class Usuario implements Serializable {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Usuarios")
+public class Usuario implements Serializable, DBase {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private Integer id;
+	@Id
+	@GeneratedValue
+	private Long id;
 	private String nome;
 	private String email; 
 	private String senha;
 	private List telefones; 
 
 	
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
